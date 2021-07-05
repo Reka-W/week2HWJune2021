@@ -1,33 +1,68 @@
-* {
+/* * {
     border: 1px red solid;
+} */
+/*************** Base Styles ***************/
+html {
+    background: rgb(41, 41, 41);
 }
 
-/* .container {
-    max-width: 1200px;
-    flex-basis: 1200px;
-} */
-
-.topBar {
+body {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-hr {
-    /* padding: 0 10% 0 10%; */
+.container {
+    margin: auto;
+    width: 90%;
 }
 
-nav {
-    width: 50%;
+h1 {
+    text-align: center;
+    font-size: 1.3em;
+    color: white;
 }
 
-.logo {
-    width: 20%;
+h2 {
+    /* text-align: center; */
+    font-size: 1em;
+    color: white;
 }
 
-.logo img {
-    width: 20%;
+h3 {
+    text-align: center;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+img {
+    width: 100%;
+}
+
+/*************** Top of Page (Hero Section) ***************/
+
+.topBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.company {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: red .0125em solid;
+}
+
+.company img {
+    margin-top: 1.225em;
+    width: 15%;
 }
 
 ul {
@@ -37,35 +72,129 @@ ul {
     justify-content: space-between;
 }
 
+ul li {
+    text-align: center;
+}
+
 ul li a {
     text-decoration: none;
+    color: white;
+}
+
+ul li a:hover {
+    color: blue;
+    font-size: 1.2em;
 }
 
 #window1 {
-    width: 900px;
-}
 
-#window2 {
-    width: 900px;
+    overflow: hidden;
 }
 
 #imageSlider1 {
     display: flex;
+    width: 100%;
+    border-top: blue .0125em solid;
+    border-bottom: blue .0125em solid;
+}
+
+.buttons {
+    text-align: center;
+    position: relative;
+    bottom: 1.5em;
+}
+
+/*************** About Section ***************/
+#about {
+    padding-bottom: 2em;
+    border-bottom: red .0125em solid;
+}
+
+#about span {
+    color: red;
+}
+
+#about a {
+    color: darkcyan;
+    text-decoration: none;
+}
+
+/*************** Artists Section ***************/
+#artists {
+    padding: 1em 0 3em 0;
+    border-top: black .0125em solid;
+    border-bottom: red .0125em solid;
+}
+
+#artists p {
+    margin-bottom: 2em;
+
+}
+
+#window2 {
+    overflow: hidden;
 }
 
 #imageSlider2 {
     display: flex;
+    width: 100%;
+    transform: translateX(000px);
+    animation: move 20s infinite;
 }
 
-img {
-    width: 900px;
+@keyframes move {
+    0% {transition: ease-in; transform: translateX(000%); }
+    25% {transition: ease-in; transform: translateX(-100%); }
+    50% {transition: ease-in; transform: translateX(-200%); }
+    75% {transition: ease-in; transform: translateX(-100%); }
+    100% {transition: ease-in; transform: translateX(000%); }
+}
+
+/*************** Contact Section ***************/
+#contact {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.4em;
+    border-bottom: red .0125em solid;
+}
+
+td {
+    color: white;
+}
+
+.submit {
+align-self: center;
+    width: 20%;
+}
+
+/*************** Footer Section ***************/
+#footer p {
+    text-align: center;
 }
 
 
 
-
-
+/****************************************************************
+************************* Tablet Screen *************************
+*****************************************************************/
 @media only screen and (min-width: 768px) {
+    
+    h1 {
+    font-size: 1.7em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    h3 {
+        text-align: center;
+    }
+    
+    p {
+        color: white;
+    }
+
     ul {
         width: 100%;
         list-style: none;
@@ -73,4 +202,23 @@ img {
         padding: 0;
         justify-content: space-between;
     }
+
+    .topBar {
+
+        align-items: center;
+    }
+
+    .company {
+        flex-direction: row;
+        align-items: baseline;
+    }    
+    nav {
+        width: 40%;
+    }
+
+    ul li {
+        font-size: 1.3em;
+    }
 }
+
+/*************** Desktop Screen ***************/
